@@ -26,7 +26,7 @@ async function submitForm() {
     <CustomError v-else-if="result && result.message" :message="result.message" />
     <div class="w-full flex-row space-y-2 md:flex md:gap-2 md:space-y-0">
       <FormInput v-model="form.name" placeholder="Name" />
-      <FormInput v-model="form.email" placeholder="email" type="email" />
+      <FormInput v-model="form.email" placeholder="Email" type="email" />
     </div>
     <FormInput v-model="form.subject" placeholder="Subject" />
     <FormTextarea v-model="form.message" placeholder="Message" />
