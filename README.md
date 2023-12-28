@@ -1,75 +1,16 @@
-# Nuxt 3 Minimal Starter
+# Cetus's portfolio
+Visit at <https://cetus.is-a.dev>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Contributing
+1. Clone the repo
+2. Install dependencies with `pnpm install`
+3. Run the dev server with `pnpm run dev`
+4. Make your changes
+5. Commit your changes. Please use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+6. Push your changes
+7. Create a pull request
+### Linting
+Please always run `pnpm run lintfix` before committing.
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+Built with [Nuxt 3](https://nuxt.com)
