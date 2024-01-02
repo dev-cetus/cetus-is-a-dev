@@ -6,10 +6,10 @@ export default defineEventHandler(async event => {
   const data = ContactSchema.safeParse(body)
 
   if (!data.success) {
-    return {
+    throw createError({
       statusCode: 409,
-      message: 'Invalid payload',
-    }
+      statusMessage: 'Invalid body',
+    })
   }
 
   const config = useRuntimeConfig()

@@ -6,24 +6,25 @@ const form = ref({
   message: '',
 })
 
-const result = ref()
+let result: any
 
 async function submitForm() {
-  const { data } = await useFetch<{ statusCode: number; message: string }>('/api/contact', {
+  result = await useLazyFetch<{ statusCode: number; message: string }>('/api/contact', {
     method: 'POST',
     body: JSON.stringify(form.value),
   })
-  result.value = data.value
-  for (const key in form.value) {
-    form.value[key] = ''
+  if (result?.data.value) {
+    for (const key in form.value) {
+      form.value[key] = ''
+    }
   }
 }
 </script>
 
 <template>
   <form class="space-y-2" @submit.prevent="submitForm">
-    <CustomSuccess v-if="result && result.statusCode == 200" message="Message successfully sent" />
-    <CustomError v-else-if="result && result.message" :message="result.message" />
+    <CustomSuccess v-if="result?.data.value" message="Message successfully sent" />
+    <CustomError v-else-if="result?.error.value" :message="result.error.value.message" />
     <div class="w-full flex-row space-y-2 md:flex md:gap-2 md:space-y-0">
       <FormInput v-model="form.name" placeholder="Name" />
       <FormInput v-model="form.email" placeholder="Email" type="email" />
